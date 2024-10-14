@@ -1,9 +1,9 @@
-import screencapture from "screencapture"
 import fs from "node:fs/promises"
+import screencapture from "screencapture"
 
 const capture = () => {
   return new Promise((resolve, reject) => {
-    screencapture((err, imagePath) => {
+    screencapture((error, imagePath) => {
       fs.readFile(imagePath).then((data) => {
         resolve([data, imagePath])
       })
