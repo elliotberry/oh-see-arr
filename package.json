@@ -1,12 +1,11 @@
 {
     "name": "oh-see-arr",
-    "description": "",
+    "description": "Selects a portion of your screen, outputs the text to terminal. Uses Tesseract.js, doesn't send your stuff to the cloud.",
     "categories": [
         "CLI",
         "OCR",
         "Tesseract.js",
         "Mac",
-        "Windows",
         "Linux",
         "Command Line",
         "Optical Character Recognition"

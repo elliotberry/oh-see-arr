@@ -7,6 +7,7 @@ const capture = () => {
       fs.readFile(imagePath).then((data) => {
         resolve([data, imagePath])
       })
+      
     })
   })
 }
