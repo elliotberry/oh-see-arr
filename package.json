@@ -1,6 +1,16 @@
 {
     "name": "oh-see-arr",
     "description": "",
+    "categories": [
+        "CLI",
+        "OCR",
+        "Tesseract.js",
+        "Mac",
+        "Windows",
+        "Linux",
+        "Command Line",
+        "Optical Character Recognition"
+    ],
     "version": "0.1.0",
     "author": "ɛʟʟɨօȶ b  =^._.^= ∫ <elliot@email.gd>",
     "license": "The Unlicense",
