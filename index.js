@@ -1,18 +1,30 @@
-import { createWorker } from "tesseract.js"
+#!/usr/bin/env node
+
+import sharp from "sharp"
 import captureAndDelete from "./capture.js"
-import { fileURLToPath } from 'url';
-import { dirname, resolve } from 'path';
+import getModel from "./get-model.js"
 
-const __filename = fileURLToPath(import.meta.url);
-const parent = dirname(__filename);
-const tessdataPath = resolve(`${parent}/tessdata`);
+const loadImageFromBase64 = async (base64) => {
+  const buffer = Buffer.from(base64, "base64")
+  const image = await sharp(buffer).ensureAlpha()
+  const { width, height } = await image.metadata()
+  return {
+    data: await image.raw().toBuffer(),
+    width,
+    height
+  }
+}
 
-;(async () => {
-  const worker = await createWorker("eng", 1, { options: {corePath: tessdataPath, workerPath: tessdataPath, cachePath: tessdataPath, langPath: tessdataPath, dataPath: tessdataPath}})
+const main = async () => {
+  const engine = await getModel()
+
   const base64Image = await captureAndDelete()
-  const {
-    data: { text }
-  } = await worker.recognize(`data:image/png;base64,${base64Image}`)
-  console.log(text)
-  await worker.terminate()
-})()
+  const image = await loadImageFromBase64(base64Image)
+  engine.loadImage(image)
+
+  const text = engine.getText()
+
+  process.stdout.write(text)
+}
+
+main()
