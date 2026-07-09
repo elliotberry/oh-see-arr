@@ -19,23 +19,23 @@
     },
     "type": "module",
     "dependencies": {
-        "commander": "^14.0.2",
-        "elliotisms": "^0.0.56",
+        "commander": "^14.0.3",
+        "elliotisms": "^0.0.57",
         "screencapture": "^0.3.1",
         "sharp": "^0.34.5",
         "tesseract-wasm": "^0.11.0",
-        "tesseract.js": "^6.0.1"
+        "tesseract.js": "^7.0.0"
     },
     "devDependencies": {
         "@stylistic/eslint-plugin-js": "^4.4.1",
-        "eslint": "^9.39.1",
+        "eslint": "^10.2.0",
         "eslint-config-prettier": "^10.1.8",
-        "eslint-plugin-perfectionist": "^4.15.1",
-        "eslint-plugin-prettier": "^5.5.4",
-        "eslint-plugin-simple-import-sort": "^12.1.1",
-        "eslint-plugin-unicorn": "^62.0.0",
-        "prettier": "^3.6.2",
-        "release-it": "^19.0.6"
+        "eslint-plugin-perfectionist": "^5.8.0",
+        "eslint-plugin-prettier": "^5.5.5",
+        "eslint-plugin-simple-import-sort": "^13.0.0",
+        "eslint-plugin-unicorn": "^64.0.0",
+        "prettier": "^3.8.1",
+        "release-it": "^19.2.4"
     },
     "prettier": {
         "arrowParens": "always",
